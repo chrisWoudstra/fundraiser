@@ -1,0 +1,92 @@
+
+@font-face {
+    font-family: 'Campton-Light';
+    src: url('../fonts/campton-light.woff2') format('woff2'),
+    url('../fonts/campton-light.woff') format('woff'),
+    url('../fonts/campton-light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Campton-Bold';
+    src: url('../fonts/campton-bold.woff2') format('woff2'),
+    url('../fonts/campton-bold.woff') format('woff'),
+    url('../fonts/campton-bold.ttf') format('truetype');
+}
+
+.campton-light {
+    font-family: 'Campton-Light';
+}
+
+.campton-bold {
+    font-family: 'Campton-Bold';
+    text-transform: uppercase;
+}
+
+body {
+    background-color: #242424;
+    font-family: 'Montserrat', sans-seif;
+    color: white;
+}
+
+label {
+    color: gray;
+}
+
+.custom-input, .custom-input:focus {
+    background-color: #363636;
+    border: 1px solid #d15851;
+    color: darkgrey;
+    border-radius: 10px;
+    text-indent: 10px;
+    outline:none;
+    box-shadow:none;
+    font-size: 20px;
+}
+
+.red {
+     color: #d15851;
+}
+
+.white {
+    color: #eeeeee;
+}
+
+.green {
+    color: mediumseagreen;
+}
+
+.gray {
+    color: darkgray;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.navbar-default {
+    background-color: #363636;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.title {
+    font-size: 26px;
+    margin-left: 1rem;
+    font-family: 'Campton-Light';
+    text-transform: uppercase;
+    color: #d15851;
+}
+
+.custom-container {
+    background-color: #363636;
+    border-radius: 10px;
+}
+
+.custom-red-btn {
+    background-color: #d15851;
+    color: white;
+    text-transform: uppercase;
+}
+
