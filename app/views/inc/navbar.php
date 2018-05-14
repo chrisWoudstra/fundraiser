@@ -6,7 +6,7 @@
                 <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?=URL_ROOT?>/pages/list">List</a>
+                <a class="nav-link" href="<?=URL_ROOT?>/events">Events</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
