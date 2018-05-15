@@ -90,3 +90,6 @@ label {
     text-transform: uppercase;
 }
 
+.custom-btn-style {
+    width: 300px;
+}
