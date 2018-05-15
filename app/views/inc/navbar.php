@@ -3,7 +3,7 @@
         <a class="navbar-brand logo" href="#"><i class="fa fa-heart red"></i><span class="title"><?=SITE_NAME?></span></a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="<?=URL_ROOT?>/pages/index">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?=URL_ROOT?>/events">Events</a>
