@@ -12,7 +12,7 @@
         <ul class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_id'])) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=URL_ROOT?>/users/logout">Logout</a>
+                    <a class="nav-link" href="<?=URL_ROOT?>/pages/index">Logout</a>
                 </li>
             <?php else : ?>
             <li class="nav-item">
