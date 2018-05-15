@@ -29,4 +29,11 @@ class Event {
             return false;
         }
     }
+
+    public function getEventById($id) {
+        $this->db->query('SELECT * FROM events WHERE id= :id');
+        $this->db->bind(':id', $id);
+
+        return $this->db->single();
+    }
 }

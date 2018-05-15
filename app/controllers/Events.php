@@ -3,12 +3,14 @@
 class Events extends Controller {
 
     private $eventModel;
+    private $userModel;
 
     public function __construct() {
         if (!isLoggedIn()) {
             redirect('users/login');
         }
         $this->eventModel = $this->model('Event');
+        $this->userModel = $this->model('User');
     }
 
     public function index() {
@@ -46,7 +48,7 @@ class Events extends Controller {
 
             if (empty($data['name_err']) && empty($data['foundation_err']) && empty($data['body_err'])) {
                 if ($this->eventModel->addEvent($data)) {
-                    flash('event_added', 'Event Added');
+                    flash('event_message', 'Event Added');
                     redirect('events/index');
                 } else {
                     die('Something went wrong');
@@ -63,5 +65,15 @@ class Events extends Controller {
             ];
         }
         $this->view('events/add', $data);
+    }
+
+    public function show($id) {
+        $event = $this->eventModel->getEventById($id);
+
+        $data = [
+            'event' => $event
+        ];
+
+        $this->view('events/show', $data);
     }
 }

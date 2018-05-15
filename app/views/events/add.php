@@ -1,7 +1,6 @@
 <?php require APP_ROOT . '/views/inc/header.php'; ?>
     <div class="col-md-8 offset-md-2">
         <div class="card card-body mt-5 custom-container">
-            <?php flash('register_success'); ?>
             <h3 class="red text-center caps">Add Event</h3>
             <form action="<?=URL_ROOT?>/events/add" method="post">
                 <div class="form-group">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Description: <sup class="red">*</sup></label>
-                    <textarea name="body" class="form-control form-control-lg custom-input <?=(!empty($data['body_err'])) ? 'is-invalid' : ''?>" cols="30" rows="5"><?php echo $data['body'];?></textarea>
+                    <textarea name="body" class="form-control form-control-lg custom-input <?=(!empty($data['body_err'])) ? 'is-invalid' : ''?>" cols="30" rows="5"><?=$data['body']?></textarea>
                     <span class="invalid-feedback"><?=$data['body_err']?></span>
                 </div>
                 <div class="text-center">
