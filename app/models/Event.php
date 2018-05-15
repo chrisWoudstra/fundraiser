@@ -13,4 +13,20 @@ class Event {
 
         return $this->db->resultSet();
     }
+
+    public function addEvent($data) {
+
+        $this->db->query('INSERT INTO events (name, foundation, body) 
+                              VALUES (:name, :foundation, :body)');
+
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':foundation', $data['foundation']);
+        $this->db->bind(':body', $data['body']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
