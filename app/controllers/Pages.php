@@ -4,6 +4,10 @@ class Pages extends Controller {
 
     public function index() {
 
+        if (isLoggedIn()) {
+            redirect('events');
+        }
+
         $data = [
             'title' => 'Home'
         ];
