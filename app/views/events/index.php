@@ -1,4 +1,5 @@
 <?php require APP_ROOT . '/views/inc/header.php'; ?>
+    <?php flash('event_message'); ?>
     <div class="row mb-4 pt-2">
         <div class="col-md-6 offset-md-3">
             <h2 class="red caps text-center">Events</h2>
