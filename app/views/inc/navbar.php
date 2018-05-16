@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark mb-3">
     <div class="container">
-        <a class="navbar-brand logo" href="#"><i class="fa fa-heart red"></i><span class="title"><?=SITE_NAME?></span></a>
+        <a class="navbar-brand logo" href="<?=URL_ROOT?>/pages/index"><i class="fa fa-heart red"></i>
+            <span class="title"><?=SITE_NAME?></span>
+            <span class="gray"> | </span>
+        </a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?=URL_ROOT?>/pages/index">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?=URL_ROOT?>/events">Events</a>
+                <a class="nav-link custom-nav-link" href="<?=URL_ROOT?>/events">Events</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
