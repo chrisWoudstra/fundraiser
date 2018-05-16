@@ -69,11 +69,59 @@ class Events extends Controller {
 
     public function show($id) {
         $event = $this->eventModel->getEventById($id);
+        $reviews = $this->eventModel->getReviews($id);
 
         $data = [
-            'event' => $event
+            'event' => $event,
+            'reviews' => $reviews
         ];
 
         $this->view('events/show', $data);
+    }
+
+    public function review($id) {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'rating' => trim($_POST['rating']),
+                'review' => trim($_POST['review']),
+                'event_id' => $id,
+                'rating_err' => '',
+                'review_err' => ''
+            ];
+
+            if (empty($data['rating'])) {
+                $data['rating_err'] = 'Please enter rating';
+            }
+            if (empty($data['review'])) {
+                $data['review_err'] = 'Please enter review';
+            }
+
+            if (empty($data['rating_err']) && empty($data['review_err'])) {
+                if ($this->eventModel->userHasNotAlreadyReviewed($id)) {
+                    if ($this->eventModel->addReview($data)) {
+                        flash('event_message', 'Review Added');
+                        redirect('events');
+                    } else {
+                        die('Something went wrong');
+                    }
+                } else {
+                    flash('event_message', 'You have already reviewed this event', 'alert alert-danger');
+                    redirect('events');
+                }
+            } else {
+                $this->view('events/review', $data);
+            }
+
+        } else {
+            $data = [
+                'rating' => '',
+                'review' => '',
+                'event_id' => $id
+            ];
+        }
+        $this->view('events/review', $data);
     }
 }
