@@ -93,3 +93,7 @@ label {
 .custom-btn-style {
     width: 300px;
 }
+
+.custom-nav-link {
+    font-size: 18px;
+}
